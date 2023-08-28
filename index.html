@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class=" webpage">
+        <div class="main-container">
+            <p class="heading">BMI calculator</p>
+            <div class="cheking-box">
+                <input class="chake-box" type="text" id="result">
+            </div>
+           
+            <div class="input-box">
+                <label><b> Enter Weight:-</b><br>
+                    <input class="weight-box" type="number" id="weight" placeholder="(kg)">
+                </label>
+                <br><br>
+                <label><b>Enter Height:-</b>
+                    <br>
+                    <input class="height-box" type="number" id="height" placeholder="(cm)">
+                </label>
+                
+            </div>
+            <div class="chake-btn">
+                <button class="btnresult" type="button" onclick="calculate()" id="saveBtn">Chacke</button>
+                <button class="btnreset" type="button" onclick="reset()" id="resetBtn">Reset</button>
+            </div>
+           
+        </div>
+    </div>
+    
+
+<script>
+const heightInput = document.getElementById('height');
+const weightInput = document.getElementById('weight');
+const resultInput = document.getElementById('result');
+
+
+
+function  calculate()
+{
+   const height = parseInt(heightInput.value) ;
+   const weight = parseInt(weightInput.value);
+   const hm = height/100 ;
+   const bmiresult = (weight/(hm*hm)).toFixed(2)
+   
+   resultInput.value = `Your BMI ${bmiresult}`;
+}
+function reset()
+{
+   const resetbtnElement = document.getElementById('resetbtn') ;
+   resultInput.value = " " ;
+   height.value = '';
+   weight.value = '' ;
+}
+ 
+
+</script>
+
+</body>
+</html>
